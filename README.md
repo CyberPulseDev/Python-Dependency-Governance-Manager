@@ -1,5 +1,3 @@
-Perfect 👍 — here is the clean, copy-paste ready README.md with the correct application name:
-
 🧩 Pip Package Manager
 
 Pip Package Manager is a modern, extensible Python desktop application for managing Python packages, projects, virtual environments, rollbacks, and dependency health — built entirely with Tkinter, with no external UI frameworks and no cloud dependencies.
