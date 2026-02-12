@@ -1,6 +1,6 @@
 # Contributing to Pip Package Manager
 
-First of all — thank you for considering contributing to **Pip Package Manager**.
+First of all thank you for considering contributing to **Pip Package Manager**.
 
 This project aims to provide a safe, extensible, offline-capable desktop tool for Python package and project management. Contributions that align with this philosophy are highly appreciated.
 
@@ -34,3 +34,4 @@ Any contribution must respect these principles.
 
 ```bash
 python Pip_Package_Manager.py
+
