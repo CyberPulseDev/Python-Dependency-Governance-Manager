@@ -428,3 +428,23 @@ Pip Package Manager is designed around:
 * SOC / DFIR Integration
 
 ---
+🐞 Known Limitations & Ongoing Improvements
+
+This application is actively developed and may still contain:
+
+Edge-case bugs
+
+Platform-specific inconsistencies
+
+Rare threading timing issues
+
+Metadata parsing anomalies
+
+Unforeseen dependency resolution behavior
+
+While the core architecture is stable, real-world environments can expose unexpected scenarios.
+
+If you encounter any issue:
+
+👉 Please open a GitHub Issue with detailed reproduction steps.
+---
