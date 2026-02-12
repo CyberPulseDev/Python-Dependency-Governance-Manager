@@ -1,7 +1,5 @@
 # 🚀 Pip Package Manager
 
-*(Based entirely on your uploaded source code )*
-
 You can copy everything below directly into GitHub. It is already formatted with proper Markdown headers, spacing, sections, and structure.
 
 ---
@@ -456,6 +454,7 @@ This project demonstrates:
 
 It is more than a pip GUI —
 it is a desktop dependency management platform.
+
 
 
 
