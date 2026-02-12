@@ -41,7 +41,7 @@ All in a clean, modern desktop interface.
 
 #High-Level Design
 
-<img width="1024" height="1024" alt="flow" src="https://github.com/user-attachments/assets/aed1242e-9fce-4e50-9f52-100e7f69a38b" />
+<img width="1024" height="1024" alt="1" src="https://github.com/user-attachments/assets/491e4284-b87c-4428-8ea8-11f5fc7508cf" />
 
 ## 1️⃣ Application Structure
 
@@ -456,4 +456,5 @@ This project demonstrates:
 
 It is more than a pip GUI —
 it is a desktop dependency management platform.
+
 
