@@ -135,9 +135,9 @@ Supports:
 
 ```
 Project Root/
-   .venv/
-      Scripts/python.exe  (Windows)
-      bin/python          (Unix)
+└── .venv/
+    ├── Scripts/python.exe    # Windows
+    └── bin/python            # Unix/macOS/Linux
 ```
 
 ---
@@ -456,6 +456,7 @@ This project demonstrates:
 
 It is more than a pip GUI —
 it is a desktop dependency management platform.
+
 
 
 
