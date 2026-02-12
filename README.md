@@ -1,13 +1,3 @@
-Pip_Package_Manager/
-│
-├── Pip_Package_Manager.py
-├── README.md
-├── CONTRIBUTING.md      ← Create this
-├── SECURITY.md          ← Create this
-├── installed_projects.json (optional runtime file)
-├── pip_snapshots.json (optional runtime file)
-└── plugins/
-
 # 🚀 Pip Package Manager
 
 *(Based entirely on your uploaded source code )*
@@ -466,3 +456,4 @@ This project demonstrates:
 
 It is more than a pip GUI —
 it is a desktop dependency management platform.
+
