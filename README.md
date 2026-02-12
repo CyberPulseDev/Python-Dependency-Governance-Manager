@@ -39,7 +39,7 @@ All in a clean, modern desktop interface.
 
 # 🏗 Technical Architecture
 
-#High-Level Design
+High-Level Design
 
 <img width="1024" height="1024" alt="1" src="https://github.com/user-attachments/assets/491e4284-b87c-4428-8ea8-11f5fc7508cf" />
 
@@ -456,5 +456,6 @@ This project demonstrates:
 
 It is more than a pip GUI —
 it is a desktop dependency management platform.
+
 
 
