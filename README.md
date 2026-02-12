@@ -30,24 +30,7 @@ No telemetry. No cloud calls. No external GUI libraries.
 
 🏗 Technical Architecture
 High-Level Architecture
-+------------------------------------------------------+
-|                     PRESENTATION LAYER               |
-|                Tkinter UI (Desktop)                  |
-|      TreeViews | Tabs | Context Menus | Themes       |
-+---------------------------▲--------------------------+
-                            │
-+---------------------------┼--------------------------+
-|                  APPLICATION LAYER                   |
-|  Pip Manager | Project Setup | Venv Handler         |
-|  Snapshot Engine | Rollback | Health Engine         |
-|  Plugin Manager                                     |
-+---------------------------▲--------------------------+
-                            │
-+---------------------------┼--------------------------+
-|                INFRASTRUCTURE LAYER                  |
-|  subprocess | importlib.metadata | Filesystem       |
-|  JSON Persistence | OS Integration                  |
-+------------------------------------------------------+
+<img width="1024" height="1024" alt="flow" src="https://github.com/user-attachments/assets/fe1f6704-217a-46e0-a132-2a61ee983432" />
 
 🧠 Core Components
 1️⃣ Main Application (PipManagerApp)
