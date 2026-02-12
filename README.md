@@ -1,11 +1,5 @@
 # 🚀 Pip Package Manager
 
-You can copy everything below directly into GitHub. It is already formatted with proper Markdown headers, spacing, sections, and structure.
-
----
-
-# 🚀 Pip Package Manager
-
 > A Modern, Enterprise-Ready Python Dependency & Environment Management Platform
 > Built with Tkinter. Designed for Developers, Power Users, and Enterprise Teams.
 
@@ -454,6 +448,7 @@ This project demonstrates:
 
 It is more than a pip GUI —
 it is a desktop dependency management platform.
+
 
 
 
