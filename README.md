@@ -1,3 +1,13 @@
+Pip_Package_Manager/
+│
+├── Pip_Package_Manager.py
+├── README.md
+├── CONTRIBUTING.md      ← Create this
+├── SECURITY.md          ← Create this
+├── installed_projects.json (optional runtime file)
+├── pip_snapshots.json (optional runtime file)
+└── plugins/
+
 # 🚀 Pip Package Manager
 
 *(Based entirely on your uploaded source code )*
@@ -39,11 +49,30 @@ All in a clean, modern desktop interface.
 
 # 🏗 Technical Architecture
 
+#High-Level Design
+
+<img width="1024" height="1024" alt="flow" src="https://github.com/user-attachments/assets/aed1242e-9fce-4e50-9f52-100e7f69a38b" />
+
 ## 1️⃣ Application Structure
 
 The application follows a modular architecture with clearly separated components:
 
-<img width="1024" height="1024" alt="flow" src="https://github.com/user-attachments/assets/972da765-400e-4d36-ac3f-df3ce6149e6e" />
+```
+Pip Package Manager
+│
+├── PipManagerApp (Main UI Controller)
+├── SubprocessHandler
+├── VenvHandler
+├── SnapshotManager
+├── RollbackEngine
+├── HealthEngine
+├── PluginManager
+├── PluginContext
+├── InstalledAppsWindow
+└── ProjectSetupWindow
+```
+
+---
 
 ## 2️⃣ Core Architecture Components
 
@@ -436,5 +465,4 @@ This project demonstrates:
 * Rollback safety mechanisms
 
 It is more than a pip GUI —
-
 it is a desktop dependency management platform.
