@@ -428,7 +428,7 @@ Pip Package Manager is designed around:
 * SOC / DFIR Integration
 
 ---
-🐞 Known Limitations & Ongoing Improvements
+# 🐞 Known Limitations & Ongoing Improvements
 
 This application is actively developed and may still contain:
 
@@ -448,3 +448,4 @@ If you encounter any issue:
 
 👉 Please open a GitHub Issue with detailed reproduction steps.
 ---
+
