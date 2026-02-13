@@ -425,7 +425,7 @@ Pip Package Manager is designed around:
 * Supply Chain Visualization
 * License Compliance Engine
 * Audit Logging Mode
-* SOC / DFIR Integration
+* SOC / DFIR Integration (It is feasible; however, there remains some uncertainty regarding its implementation.)
 
 ---
 # 🐞 Known Limitations & Ongoing Improvements
@@ -448,4 +448,5 @@ If you encounter any issue:
 <img width="891" height="880" alt="image" src="https://github.com/user-attachments/assets/1d1891ed-127d-4472-b349-977c846daba6" />
 <img width="994" height="622" alt="image" src="https://github.com/user-attachments/assets/40253427-b163-41f9-b2d8-ae40648a3ff4" />
 <img width="594" height="425" alt="image" src="https://github.com/user-attachments/assets/80513f3a-1651-4936-a136-80e891e9aca9" />
+
 
