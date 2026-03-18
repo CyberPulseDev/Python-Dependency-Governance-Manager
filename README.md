@@ -436,7 +436,6 @@ Pip Package Manager is designed around:
 * Rare threading timing issues
 * Metadata parsing anomalies
 * Unforeseen dependency resolution behavior
-* While the core architecture is stable, real-world environments can expose unexpected scenarios.
 
 If you encounter any issue:
 
