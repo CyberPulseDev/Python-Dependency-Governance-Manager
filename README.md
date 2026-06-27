@@ -1,399 +1,428 @@
 # 🚀 Pip Package Manager
 
-> A Modern, Enterprise-Ready Python Dependency & Environment Management Platform
-> Built with Tkinter. Designed for Developers, Power Users, and Enterprise Teams.
+> **Enterprise Python Environment Governance Platform**  
+> A modern desktop application for Python package management, project creation, application management, dependency governance, security review, rollback protection, and plugin-based extensibility.
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Offline](https://img.shields.io/badge/Offline-Supported-orange)
+![Plugins](https://img.shields.io/badge/Plugin%20Architecture-Enabled-purple)
 
 ---
 
 ## 📌 Overview
 
-**Pip Package Manager** is a desktop application that provides a powerful graphical interface for:
+**Pip Package Manager** started as a desktop GUI for managing Python packages and has evolved into a full **Python Environment Governance Platform**.
 
-* Managing Python packages
-* Creating and managing virtual environments
-* Analyzing dependency health & risk
-* Creating environment snapshots
-* Performing safe rollbacks
-* Managing local projects from GitHub
-* Extending functionality via plugins
+It combines:
 
-Unlike traditional pip GUIs, this application combines:
+- Python package management
+- Dependency health analysis
+- Environment snapshots and rollback
+- Enterprise policy checks
+- Security and license review
+- Requirements auditing
+- Offline governance cache support
+- Supply-chain dependency insight
+- Embedded project creation
+- Embedded application management
+- Extensible plugin architecture
 
-* 🧠 Dependency Intelligence
-* 🔄 Rollback Safety
-* 🧪 Virtual Environment Management
-* 🔌 Plugin Architecture
-* 🏢 Enterprise Governance Readiness
+The application is designed to remain **local-first**, **offline-capable**, and **safe by default**.
 
-All in a clean, modern desktop interface.
+---
+
+# ✨ Key Highlights
+
+- 🏠 Professional sidebar dashboard
+- 📦 Package install, upgrade, uninstall, and outdated detection
+- 📊 KPI cards for package, risk, policy, license, and security visibility
+- 🛡 Governance engines for audit, policy, security, license, and requirements review
+- 🔄 Snapshot and rollback protection before risky package changes
+- 🧩 Enterprise plugin system with permissions, lifecycle hooks, health status, logs, and reload support
+- 🛠 Embedded Project Creation Wizard
+- 🖥 Embedded Application Management Center
+- 📂 Recent Projects workspace
+- 🌐 Offline cache support for governance data
+- 🎨 Light and Dark mode
+
+---
+
+# 🏠 Modern Workspace
+
+The old pop-up based project tools have been replaced with a unified embedded workspace.
+
+The **Projects** section now includes:
+
+- **Project Creation Wizard**
+- **Application Management Center**
+- **Recent Projects**
+
+The Tools menu items now route into these embedded tabs instead of launching separate windows:
+
+- `Project Assistant...`
+- `Installed Apps...`
+
+This keeps the workflow inside one clean professional interface.
+
+---
+
+# 🛠 Project Creation Wizard
+
+Create new Python projects from built-in templates.
+
+## Included Templates
+
+- Desktop Application
+- CLI Application
+- Web Application
+- API Project
+- Python Library
+- Plugin Project
+
+## Project Initialization Features
+
+The wizard can generate:
+
+- Starter source files
+- `requirements.txt`
+- `README.md`
+- Optional virtual environment
+- Initial project structure
+- Toolchain checks
+- Environment detection
+- Health scoring
+- Dependency recommendations
+- Recent project persistence
+
+This helps users create cleaner Python projects faster while following better development practices.
+
+---
+
+# 🖥 Application Management Center
+
+The embedded Application Management Center replaces the old separate Installed Applications window.
+
+## Features
+
+- Installed application discovery
+- Category detection
+- Advanced search and filtering
+- Launch application
+- Open application folder
+- Favorite applications
+- Export application inventory
+- Running status detection
+- Health and security fields
+- Usage statistics
+- Repair request hooks
+- Uninstall request hooks
+- Persistent favorites and usage stats
+
+Application state is stored locally in:
+
+```text
+governance_data/application_center_state.json
+```
+
+---
+
+# 📂 Recent Projects
+
+The Recent Projects tab provides quick access to previously created or opened projects.
+
+It supports:
+
+- Recent project persistence
+- One-click project access
+- Project metadata
+- Environment overview
+- Project health context
+
+---
+
+# 📊 Dashboard
+
+The main dashboard provides KPI cards for:
+
+- Total packages
+- Outdated packages
+- High-risk packages
+- Vulnerable packages
+- License issues
+- Policy violations
+- Last scan time
+
+---
+
+# 📦 Package Management
+
+Core package operations are preserved:
+
+- Install packages
+- Upgrade selected packages
+- Upgrade all outdated packages
+- Uninstall packages
+- Search packages
+- Filter outdated packages
+- View package metadata
+- View direct dependencies
+- Export package list to CSV or JSON
+
+Risky actions can trigger rollback protection through snapshots.
+
+---
+
+# 🔄 Snapshot & Rollback
+
+The snapshot system allows safer package changes.
+
+## Snapshot Features
+
+- Manual environment snapshots
+- Optional pre-change snapshots
+- Snapshot notes
+- Snapshot deletion
+- Environment restore
+
+## Rollback Process
+
+Snapshots are created using `pip freeze` and restored using pip-based requirements restoration.
+
+This avoids destructive filesystem-level rollback and keeps recovery transparent.
+
+---
+
+# 🧠 Environment Health Engine
+
+The health engine evaluates packages using local signals such as:
+
+| Signal | Description |
+|---|---|
+| Stale package | Package has not changed for a long period |
+| Large package | Package has a large local footprint |
+| Deep dependency chain | Package has many dependency levels |
+| Executable entry points | Package exposes command-line entry points |
+
+Health states:
+
+- 🟢 Healthy
+- 🟡 Moderate Risk
+- 🔴 High Risk
+
+---
+
+# 🛡 Governance Engines
+
+The platform includes several governance engines:
+
+## AuditLogger
+
+Stores important application actions in local audit logs.
+
+Examples:
+
+- Install
+- Upgrade
+- Uninstall
+- Rollback
+- Snapshot creation
+- Plugin enable/disable
+- Governance scan
+- Policy evaluation
+
+## PolicyEngine
+
+Supports local JSON-based policies such as:
+
+- No unpinned dependencies
+- Block high severity vulnerabilities
+- Block selected licenses
+- Require virtual environment usage
+
+## SecurityScanner
+
+Scans installed packages against locally cached vulnerability information.
+
+## LicenseScanner
+
+Extracts package license metadata and highlights risky or unknown licenses.
+
+## RequirementsAuditor
+
+Audits supported project dependency files:
+
+- `requirements.txt`
+- `pyproject.toml`
+- `Pipfile`
+- `setup.py`
+- `setup.cfg`
+
+Findings may include:
+
+- Missing packages
+- Extra packages
+- Unpinned dependencies
+- Outdated packages
+
+## EnvironmentComparator
+
+Compares snapshots or environments to show:
+
+- Added packages
+- Removed packages
+- Changed versions
+
+## OfflineCacheManager
+
+Maintains local governance cache files for offline operation.
+
+## SupplyChainGraphBuilder
+
+Builds dependency relationships for supply-chain visibility.
+
+## DashboardController
+
+Aggregates governance and package data for dashboard KPIs.
+
+---
+
+# 🌐 Offline Governance Data
+
+The application stores governance data locally in:
+
+```text
+governance_data/
+├── policies.json
+├── vulnerability_cache.json
+├── package_metadata_cache.json
+├── audit_logs.jsonl
+└── application_center_state.json
+```
+
+The platform is designed to remain useful even when offline.
+
+---
+
+# 🔌 Enterprise Plugin System
+
+The plugin architecture has been upgraded with:
+
+- Plugin manifests
+- Permissions
+- Lifecycle hooks
+- Error isolation
+- Health/status tracking
+- Reload support
+- Plugin logs
+- Rich plugin manager UI
+
+## Plugin Structure
+
+```text
+plugins/
+└── example_stats/
+    ├── manifest.json
+    └── plugin.py
+```
+
+## Manifest Example
+
+```json
+{
+  "id": "example.plugin.stats",
+  "name": "Package Statistics",
+  "version": "1.0.0",
+  "author": "System",
+  "description": "Adds package statistics.",
+  "category": "Reporting",
+  "permissions": ["packages:read"],
+  "api_version": "1.0",
+  "entry": "plugin.py",
+  "enabled": false
+}
+```
+
+## Supported Plugin Hooks
+
+- `on_load`
+- `on_unload`
+- `on_packages_loaded`
+- `on_scan_requested`
+- `on_policy_check`
+- `on_export`
+
+Plugins are isolated so a broken plugin does not crash the main application.
 
 ---
 
 # 🏗 Technical Architecture
 
-High-Level Design
+The following diagram illustrates the high-level architecture of the application, showing how the Enterprise Dashboard, Core Manager, Governance Engines, Project Workspace, Local Storage, and Plugin Framework interact.
 
-<img width="1024" height="1024" alt="1" src="https://github.com/user-attachments/assets/491e4284-b87c-4428-8ea8-11f5fc7508cf" />
+> <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/a303eb51-7072-43f0-9ada-76e0db62c4f7" />
 
-## 1️⃣ Application Structure
+<p align="center">
+  <img src="images/architecture.png" alt="Pip Package Manager Architecture" width="100%">
+</p>
 
-The application follows a modular architecture with clearly separated components:
+The architecture follows a modular, enterprise-oriented design where the **Core Manager / Controller** orchestrates communication between the user interface, governance engines, project workspace, plugin framework, and local storage while remaining fully offline-capable.
 
-```
-Pip Package Manager
-│
-├── PipManagerApp (Main UI Controller)
-├── SubprocessHandler
-├── VenvHandler
-├── SnapshotManager
-├── RollbackEngine
-├── HealthEngine
-├── PluginManager
-├── PluginContext
-├── InstalledAppsWindow
-└── ProjectSetupWindow
-```
 
----
+# 🎨 User Interface
 
-## 2️⃣ Core Architecture Components
+The application includes:
 
-### 🖥 Main Application Controller
+- Sidebar navigation
+- Dashboard cards
+- Professional workspace layout
+- Search and filters
+- Treeview status badges
+- Context menus
+- Progress-aware status bar
+- Light mode
+- Dark mode
 
-**Class:** `PipManagerApp`
+Main sections include:
 
-Responsibilities:
-
-* UI orchestration
-* Background threading
-* Command queue management
-* Theme management
-* Plugin notifications
-* Snapshot coordination
-* Dependency refresh lifecycle
+- Dashboard
+- Packages
+- Dependencies
+- Security
+- Compliance
+- Policies
+- Snapshots / Rollback
+- Projects
+- Plugins
+- Audit Logs
+- Settings
 
 ---
 
-### 🔁 Threading Model
+# 🗃 Runtime Data Files
 
-The application uses:
-
-* `threading.Thread`
-* `queue.Queue`
-* `after()` Tkinter-safe UI updates
-
-All long-running operations (pip install, pip freeze, clone, etc.) are executed in background threads.
-
-This ensures:
-
-* ✅ No UI freezing
-* ✅ Thread-safe UI updates
-* ✅ Controlled subprocess execution
-
----
-
-### ⚙️ Subprocess Abstraction
-
-**Class:** `SubprocessHandler`
-
-Provides:
-
-* Cross-platform execution
-* Windows console suppression
-* Environment variable injection
-* Safe command execution
-* Output capture support
-
-This abstraction ensures consistent subprocess behavior across:
-
-* Windows
-* macOS
-* Linux
-
----
-
-### 🧪 Virtual Environment Engine
-
-**Class:** `VenvHandler`
-
-Capabilities:
-
-* Detect existing venvs (`.venv`, `venv`, `env`)
-* Create new venv using `python -m venv`
-* Validate interpreter paths
-* Cross-platform executable resolution
-
-Supports:
-
-```
-Project Root/
-└── .venv/
-    ├── Scripts/python.exe    # Windows
-    └── bin/python            # Unix/macOS/Linux
-```
-
----
-
-### 📸 Snapshot & Rollback System
-
-**Classes:**
-
-* `SnapshotManager`
-* `RollbackEngine`
-
-Snapshot process:
-
-1. Runs `pip freeze`
-2. Stores package state in:
-
-   ```
-   pip_snapshots.json
-   ```
-3. Records:
-
-   * Timestamp
-   * Interpreter path
-   * Scope (Global / Project)
-   * Installed packages
-   * Optional note
-
-Rollback process:
-
-1. Generates temporary requirements file
-2. Executes:
-
-   ```
-   pip install -r rollback_<id>.txt
-   ```
-3. Restores environment state
-
-No filesystem cloning.
-No unsafe deletion.
-Fully pip-based restoration.
-
----
-
-### 🧠 Dependency Health & Risk Engine
-
-**Class:** `HealthEngine`
-
-Local, deterministic scoring system.
-
-Risk signals include:
-
-| Signal                  | Description              |
-| ----------------------- | ------------------------ |
-| Stale                   | No updates in 730+ days  |
-| Large Size              | > 100 MB footprint       |
-| Deep Dependency Chain   | > 10 levels              |
-| Executable Entry Points | Contains console scripts |
-
-Scoring model:
-
-* 🟢 Healthy (0)
-* 🟡 Moderate Risk (1–5)
-* 🔴 High Risk (6+)
-
-Health is displayed directly in the package list UI.
-
----
-
-### 🔌 Plugin Architecture
-
-**Classes:**
-
-* `PluginManager`
-* `PluginContext`
-* `PluginBase`
-* `PluginManagerWindow`
-
-Plugin structure:
-
-```
-plugins/
-   example_stats/
-      manifest.json
-      plugin.py
-```
-
-Manifest requirements:
-
-```json
-{
-  "id": "...",
-  "api_version": "1.0",
-  "entry": "plugin.py"
-}
-```
-
-Plugin capabilities:
-
-* Add UI tabs
-* Add menu commands
-* Access read-only package snapshot
-* Log to status bar
-
-Plugin isolation:
-
-* No monkey patching
-* No core overrides
-* Safe load failure handling
-* API version validation
-
----
-
-## 🎨 UI Architecture
-
-Modernized Tkinter using:
-
-* `ttk.Style`
-* Custom theme palettes
-* Zebra TreeView rows
-* Emoji badge indicators
-* Context menus
-* Notebook-based layout
-
-Tabs include:
-
-* 📦 Metadata
-* 🔗 Dependencies
-* ⏪ Rollback
-* Plugin-added tabs
-
----
-
-# ✨ Features
-
-## 📦 Package Management
-
-* Install packages
-* Uninstall packages
-* Upgrade selected packages
-* Upgrade all outdated packages
-* Bulk operations
-* Search filtering
-* Outdated filtering
-
----
-
-## 🧠 Dependency Intelligence
-
-* Health scoring
-* Risk breakdown
-* Dependency chain display
-* Entry point detection
-* Footprint analysis
-
----
-
-## 🧪 Virtual Environments
-
-* Optional per-project venv
-* Automatic detection
-* On-demand creation
-* Interpreter resolution display
-* Safe command routing
-
----
-
-## 📸 Snapshot & Rollback
-
-* Manual snapshot creation
-* Pre-upgrade snapshots
-* Environment restore
-* Snapshot notes
-* Snapshot deletion
-
----
-
-## 🗂 Project Setup Assistant
-
-* Clone GitHub repositories
-* Extract ZIP files
-* Detect project types:
-
-  * Python (requirements.txt)
-  * Node.js (package.json)
-* Auto-detect run commands
-* Run application directly
-* Save installed project records
-
----
-
-## 🏢 Installed Applications Manager
-
-* List saved projects
-* Show environment type (Global / Venv)
-* Run projects
-* Open directory
-* View dependencies
-
----
-
-## 🔌 Plugin System
-
-* Plugin discovery
-* Plugin enable/disable
-* Plugin menu injection
-* Plugin tab injection
-* Safe API boundary
-
----
-
-## 🎨 Modern UI Enhancements
-
-* Light & Dark Mode
-* Context menus
-* Keyboard shortcuts:
-
-  * `F5` → Refresh
-  * `Ctrl+F` → Search
-  * `Delete` → Uninstall
-* Status bar with live indicators
-* Busy state cursor control
-
----
-
-# 🗃 Data Storage
-
-| File                      | Purpose               |
-| ------------------------- | --------------------- |
+| File / Folder | Purpose |
+|---|---|
 | `installed_projects.json` | Saved project records |
-| `pip_snapshots.json`      | Environment snapshots |
-| `plugins/plugins.json`    | Enabled plugin list   |
-| `plugins/*`               | Plugin definitions    |
-
-All files are:
-
-* Human-readable JSON
-* Backward-compatible
-* Non-destructive
-
----
-
-# 🖥 System Requirements
-
-* Python 3.8+
-* Tkinter (bundled with Python)
-* pip
-* Git (optional, for cloning)
-
-Supported OS:
-
-* Windows
-* macOS
-* Linux
+| `pip_snapshots.json` | Environment snapshots |
+| `plugins/plugins.json` | Enabled plugin list |
+| `plugins/*` | Plugin definitions |
+| `governance_data/policies.json` | Local policy rules |
+| `governance_data/vulnerability_cache.json` | Offline vulnerability cache |
+| `governance_data/package_metadata_cache.json` | Offline package metadata |
+| `governance_data/audit_logs.jsonl` | Local audit log |
+| `governance_data/application_center_state.json` | Application Center favorites and usage state |
 
 ---
 
-# 🔒 Safety & Stability Principles
+# 🖥 Requirements
 
-* No automatic destructive actions
-* No forced virtual environments
-* No blocking installations
-* No background auto-modifications
-* No network requirement for core features
-* All risky actions require confirmation
+- Python 3.8+
+- Tkinter
+- pip
+- Git optional, for cloning projects
+- Packaging module recommended for advanced version comparison
 
 ---
 
@@ -403,48 +432,45 @@ Supported OS:
 python "Pip Package Manager.py"
 ```
 
----
+or, depending on your filename:
 
-# 📁 Project Philosophy
-
-Pip Package Manager is designed around:
-
-* 🔐 Safety First
-* 🧠 Intelligence Over Guesswork
-* 🧩 Modular Extensibility
-* 🖥 Clean Desktop UX
-* 🏢 Enterprise Readiness
-* 🧪 Developer Power Tools
+```bash
+python Pip_Package_Manager.py
+```
 
 ---
 
-# 🛣 Roadmap (Future Enhancements)
+# 🔒 Safety Principles
 
-* Enterprise Policy Engine
-* Offline Enforcement Mode
-* Supply Chain Visualization
-* License Compliance Engine
-* Audit Logging Mode
-  
----
-# 🐞 Known Limitations & Ongoing Improvements
+This project follows these principles:
 
-*This application is actively developed and may still contain:
-*Edge-case bugs
-* Platform-specific inconsistencies
-* Rare threading timing issues
-* Metadata parsing anomalies
-* Unforeseen dependency resolution behavior
+- No telemetry
+- Offline-first design
+- User-confirmed risky actions
+- Rollback protection
+- No hidden background package modification
+- Local data storage
+- Plugin permission boundaries
+- Backward compatibility where possible
 
-If you encounter any issue:
-
-👉 Please open a GitHub Issue with detailed reproduction steps.
 ---
 
-## 📷 Application Screenshots
-<img width="1143" height="738" alt="image" src="https://github.com/user-attachments/assets/9180dbd6-54a2-40fb-9aea-c319a2843e75" />
-<img width="891" height="880" alt="image" src="https://github.com/user-attachments/assets/1d1891ed-127d-4472-b349-977c846daba6" />
-<img width="994" height="622" alt="image" src="https://github.com/user-attachments/assets/40253427-b163-41f9-b2d8-ae40648a3ff4" />
-<img width="594" height="425" alt="image" src="https://github.com/user-attachments/assets/80513f3a-1651-4936-a136-80e891e9aca9" />
+# 🛣 Roadmap
 
+There are currently **no planned roadmap items**. Development is driven by ongoing improvements, community feedback, bug fixes, and new enterprise features as they are identified.
 
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 🙌 Final Note
+
+Pip Package Manager is no longer just a pip GUI.
+
+It is becoming a complete **local-first Python Environment Governance Platform** for developers, power users, DevOps teams, and security-conscious environments.
+
+If you find the project useful, please consider giving it a ⭐ on GitHub.
