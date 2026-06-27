@@ -2,22 +2,26 @@
 
 ## Overview
 
-Pip Package Manager is designed with safety, transparency, and offline compatibility in mind.
+**Pip Package Manager** is designed around safety, transparency, and offline-first operation.
 
-This document outlines how security issues are handled and how to report vulnerabilities responsibly.
+The application manages Python packages, projects, plugins, local application discovery, governance policies, vulnerability cache data, audit logs, and rollback snapshots. Because these areas can affect development environments, security is treated as a core design requirement.
 
 ---
 
 # 🛡 Security Design Principles
 
-The application is built on the following principles:
+The project follows these principles:
 
 - No telemetry
-- No automatic external connections
-- No hidden subprocess execution
-- Explicit user-driven actions
-- Offline-first architecture
-- Minimal external dependencies
+- No hidden background network activity
+- No automatic destructive actions
+- Explicit user confirmation for risky operations
+- Offline-first governance support
+- Local data storage
+- Plugin permission boundaries
+- Rollback protection before package changes where possible
+- Transparent subprocess usage
+- Human-readable local state files
 
 ---
 
@@ -26,33 +30,32 @@ The application is built on the following principles:
 Currently supported:
 
 - Latest stable release
-- Development branch (if public)
+- Active development branch, if public
 
-Older versions may not receive security updates.
+Older versions may not receive security fixes.
 
 ---
 
 # 🚨 Reporting a Vulnerability
 
-If you discover a security vulnerability:
+If you discover a vulnerability, please do **not** open a public issue immediately.
 
-1. **Do NOT open a public issue**
-2. Do NOT disclose publicly before review
-3. Contact the repository owner privately
+Instead:
 
-Include:
+1. Contact the repository owner privately.
+2. Provide a clear description of the issue.
+3. Include reproduction steps.
+4. Explain the potential impact.
+5. Suggest mitigation if possible.
 
-- Description of the issue
+Useful details include:
+
+- Operating system
+- Python version
+- Application version or commit
+- Relevant plugin details, if plugin-related
 - Steps to reproduce
-- Potential impact
-- Suggested mitigation (if available)
-
-We will:
-
-- Acknowledge receipt within a reasonable timeframe
-- Investigate promptly
-- Release a fix if confirmed
-- Provide public disclosure once patched
+- Logs or screenshots if safe to share
 
 ---
 
@@ -61,66 +64,159 @@ We will:
 Security concerns may include:
 
 - Arbitrary code execution
-- Plugin sandbox escape
-- Path traversal issues
-- Unsafe subprocess usage
+- Unsafe subprocess execution
+- Plugin sandbox or permission bypass
+- Path traversal
+- Unsafe ZIP extraction
 - Snapshot corruption
+- Rollback abuse
 - File overwrite vulnerabilities
+- Unsafe application launch behavior
+- Unsafe repair/uninstall hooks
 - Privilege escalation risks
+- Governance policy bypass
+- Audit log tampering
+- Vulnerability cache poisoning
 
 ---
 
 # 🔌 Plugin Security Model
 
-Plugins:
+Plugins are local extensions and should be treated carefully.
 
-- Are local only
-- Must match API version
-- Are disabled by default
-- Cannot modify core state
-- Cannot execute pip commands directly
+The plugin system supports:
 
-Plugins that violate this model should be reported.
+- Manifest-based discovery
+- API version checks
+- Permissions
+- Lifecycle hooks
+- Error isolation
+- Health/status tracking
+- Plugin logs
+- Reload support
+
+Plugins should:
+
+- Be disabled by default
+- Declare required permissions
+- Avoid destructive actions
+- Avoid hidden network calls
+- Avoid modifying core application state directly
+- Handle errors safely
+- Respect offline-first behavior
+
+A broken or malicious plugin should not be allowed to crash or compromise the main application.
+
+---
+
+# 🛠 Project Creation Security
+
+The embedded Project Creation Wizard may create starter files, requirements files, README files, optional virtual environments, and project structures.
+
+Security considerations:
+
+- Generated paths should be validated
+- Existing files should not be overwritten silently
+- Virtual environment creation should be explicit
+- Generated dependency recommendations should be reviewable
+- Starter templates should avoid unsafe code
+
+---
+
+# 🖥 Application Management Center Security
+
+The Application Management Center supports discovery, launch, favorites, usage stats, export, repair hooks, and uninstall hooks.
+
+Security considerations:
+
+- Launch commands should be explicit
+- Repair/uninstall hooks should require user confirmation
+- Application paths should be validated
+- Exported inventory may contain local path information
+- Favorites and usage stats are stored locally
+
+Application Center state is stored in:
+
+```text
+governance_data/application_center_state.json
+```
 
 ---
 
 # 📂 Local Data Security
 
-The application stores:
+The application may store local data in:
 
-- installed_projects.json
-- pip_snapshots.json
-- plugins.json
+```text
+installed_projects.json
+pip_snapshots.json
+plugins/plugins.json
+governance_data/policies.json
+governance_data/vulnerability_cache.json
+governance_data/package_metadata_cache.json
+governance_data/audit_logs.jsonl
+governance_data/application_center_state.json
+```
 
-These are plain JSON files stored locally.
+These files are local and human-readable.
 
-No data is transmitted externally.
-
-Users are responsible for filesystem-level security.
+Users are responsible for filesystem-level protection, especially in shared environments.
 
 ---
 
-# 🔒 Enterprise Considerations
+# 🛡 Governance Data Integrity
 
-For enterprise environments:
+Governance features may rely on local files such as:
 
-- Run under standard user privileges
-- Restrict write permissions if needed
-- Review plugins before enabling
-- Enable offline mode where required
+- `policies.json`
+- `vulnerability_cache.json`
+- `package_metadata_cache.json`
+
+Security recommendations:
+
+- Review policy files before use
+- Protect governance files from unauthorized edits
+- Treat vulnerability cache files as trusted local input only when sourced safely
+- Avoid blindly importing unknown cache data
+
+---
+
+# 🔄 Snapshot & Rollback Safety
+
+Snapshots are intended to help recover Python package states.
+
+Security considerations:
+
+- Snapshot files may reveal installed package names and versions
+- Rollback restores packages through pip
+- Users should review snapshots before restoring in sensitive environments
+- Rollback should not be treated as a full system restore
+
+---
+
+# 🏢 Enterprise Recommendations
+
+For enterprise use:
+
+- Run the app as a standard user
+- Restrict write access to plugin and governance directories
+- Review plugins before enabling them
+- Keep offline cache data controlled
+- Use approved policy files
+- Review audit logs regularly
+- Avoid running unknown project templates or plugins
+- Validate repair/uninstall workflows before enabling them
 
 ---
 
 # 🧠 Responsible Disclosure
 
-We appreciate responsible disclosure and will work cooperatively with researchers.
+We appreciate responsible disclosure.
 
-Please allow time for investigation and patching before public discussion.
+Please allow reasonable time for investigation and patching before public disclosure.
 
 ---
 
 # 🙏 Thank You
 
-Security is a shared responsibility.
-
-Thank you for helping keep Pip Package Manager safe and trustworthy.
+Thank you for helping keep Pip Package Manager safe, transparent, and trustworthy.
