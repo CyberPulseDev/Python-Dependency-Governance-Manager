@@ -1,0 +1,11 @@
+# Pip Package Manager - Requirements
+# Python 3.8+
+
+# Backport for Python < 3.8 (ignored on newer versions)
+importlib_metadata>=6.0; python_version < "3.8"
+
+# Version comparison utilities
+packaging>=24.0
+
+# Optional: Better Windows integration (not required)
+pywin32>=306; platform_system=="Windows"
