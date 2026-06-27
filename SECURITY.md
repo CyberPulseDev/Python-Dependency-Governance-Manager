@@ -119,12 +119,6 @@ Please allow time for investigation and patching before public discussion.
 
 ---
 
-## 📷 Application Screenshots
-<img width="1145" height="746" alt="image" src="https://github.com/user-attachments/assets/b9f1ee92-6024-4c28-b87a-d402bb5b7f51" />
-<img width="1143" height="744" alt="image" src="https://github.com/user-attachments/assets/b7b33660-c59e-4bfe-bc8e-7fabe8634b05" />
-<img width="1141" height="737" alt="image" src="https://github.com/user-attachments/assets/a74a64e5-23d7-4141-b703-0ad5847ffd24" />
-<img width="1145" height="744" alt="image" src="https://github.com/user-attachments/assets/86ba3362-2942-4443-8b1a-48d13804ba08" />
-
 # 🙏 Thank You
 
 Security is a shared responsibility.
